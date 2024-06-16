@@ -1,0 +1,60 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0/linux-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {},
+    ".NETCoreApp,Version=v6.0/linux-x64": {
+      "TestParser/1.0.0": {
+        "dependencies": {
+          "FileParser": "3.0.0",
+          "Microsoft.NET.ILLink.Analyzers": "7.0.100-1.23211.1",
+          "Microsoft.NET.ILLink.Tasks": "7.0.100-1.23211.1"
+        },
+        "runtime": {
+          "TestParser.dll": {}
+        }
+      },
+      "FileParser/3.0.0": {
+        "runtime": {
+          "lib/net6.0/FileParser.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "Microsoft.NET.ILLink.Analyzers/7.0.100-1.23211.1": {},
+      "Microsoft.NET.ILLink.Tasks/7.0.100-1.23211.1": {}
+    }
+  },
+  "libraries": {
+    "TestParser/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FileParser/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I7AybPkOYSStNMuzqsTjP+cKWwkyY/uCLG6ULTiOzzWaaY4Kof26/EilGJUiBI75OgI96qR9JZDJQF0vpY7OCg==",
+      "path": "fileparser/3.0.0",
+      "hashPath": "fileparser.3.0.0.nupkg.sha512"
+    },
+    "Microsoft.NET.ILLink.Analyzers/7.0.100-1.23211.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0GvbEgDGcUQA9KuWcQU1WwYHXt1tBzNr1Nls/M57rM7NA/AndFwCaCEoJpJkmxRY7xLlPDBnmGp8h5+FNqUngg==",
+      "path": "microsoft.net.illink.analyzers/7.0.100-1.23211.1",
+      "hashPath": "microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512"
+    },
+    "Microsoft.NET.ILLink.Tasks/7.0.100-1.23211.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tvG8XZYLjT0o3WicCyKBZysVWo1jC9HdCFmNRmddx3WbAz0UCsd0qKZqpiEo99VLA8Re+FzWK51OcRldQPbt2Q==",
+      "path": "microsoft.net.illink.tasks/7.0.100-1.23211.1",
+      "hashPath": "microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512"
+    }
+  }
+}

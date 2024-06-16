@@ -1,0 +1,868 @@
+Olyumpus # FGT ----- Aruba_Switch --- AP
+Unknown action 0
+
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus # get sys arp | grep 10.10.10.4
+10.10.10.4        0          04:d5:90:67:e3:d8 lan
+
+Olyumpus # execute dhcp lease-list | grep 10.10.10.4
+pipe cannot be used here
+
+command parse error in the end
+Command fail. Return code -61
+
+Olyumpus # execute dhcp lease-list
+<interface>    List leases on this interface.
+
+Olyumpus # execute dhcp lease-list
+lan
+  IP            MAC-Address             Hostname            VCI                 SSID                AP                  SERVER-ID           Expiry
+  10.10.10.8    00:04:4b:2b:26:ca                           android-dhcp-11                                             4                   Thu Nov 23 22:
+56:40 2023
+  10.10.10.23   a4:d1:d2:02:e2:71       Clouds-iPad                                                                     4                   Thu Nov 23 07:
+57:31 2023
+  10.10.10.20   9e:04:6d:93:76:8d                                                                                       4                   Fri Nov 24 14:
+01:31 2023
+  10.10.10.4    04:d5:90:67:e3:d8       FortiAp             FortiAP-FP221E                                              4                   Fri Nov 24 14:
+23:53 2023
+  10.10.10.18   88:57:1d:93:6b:57       system-ac                                                                       4                   Thu Nov 23 07:
+22:41 2023
+  10.10.10.24   de:c1:bf:7f:17:13                                                                                       4                   Thu Nov 23 07:
+25:32 2023
+  10.10.10.3    80:c1:6e:cd:c5:20                           HP J9773A 2530-24G-                                         4                   Thu Nov 23 07:
+22:01 2023
+  10.10.10.100  00:11:32:38:6b:bf       DiskStation                                                                     4                   Thu Nov 23 07:
+22:48 2023
+  10.10.10.40   c8:d7:78:85:5f:4e       bosch-dishwasher-01                                                             4                   Wed Nov 22 09:
+43:28 2023
+  10.10.10.10   f8:b4:6a:a6:5d:5b       Sherlock            MSFT 5.0                                                    4                   Fri Nov 24 14:
+03:22 2023
+  10.10.10.7    ac:80:0a:5c:ef:af                           android-dhcp-10                                             4                   Thu Nov 23 19:
+33:32 2023
+  10.10.10.14   ec:71:db:de:cb:96       Porch               udhcp 1.24.1                                                4                   Thu Nov 23 07:
+21:57 2023
+  10.10.10.2    10:7b:44:95:a9:08                           udhcp 1.17.4                                                4                   Thu Nov 23 07:
+22:10 2023
+  10.10.10.5    b8:d6:1a:a6:89:dc       Sensor-In-Network-C                                                             4                   Thu Nov 23 07:
+21:57 2023
+  10.10.10.13   ec:71:db:3c:0c:7c       RoomsCam            udhcp 1.24.1                                                4                   Thu Nov 23 07:
+21:57 2023
+  10.10.10.12   ec:71:db:b4:7c:fc       KitchenCam          udhcp 1.24.1                                                4                   Thu Nov 23 07:
+21:57 2023
+  10.10.10.11   ec:71:db:76:58:2a       HomeDoor            udhcp 1.24.1                                                4                   Thu Nov 23 07:
+21:57 2023
+
+Olyumpus # execute dhcp lease-list lan
+lan
+  IP            MAC-Address             Hostname            VCI                 SSID                AP                  SERVER-ID           Expiry
+  10.10.10.8    00:04:4b:2b:26:ca                           android-dhcp-11                                             4                   Thu Nov 23 22:
+56:40 2023
+  10.10.10.23   a4:d1:d2:02:e2:71       Clouds-iPad                                                                     4                   Thu Nov 23 07:
+57:31 2023
+  10.10.10.20   9e:04:6d:93:76:8d                                                                                       4                   Fri Nov 24 14:
+01:31 2023
+  10.10.10.4    04:d5:90:67:e3:d8       FortiAp             FortiAP-FP221E                                              4                   Fri Nov 24 14:
+23:53 2023
+  10.10.10.18   88:57:1d:93:6b:57       system-ac                                                                       4                   Thu Nov 23 07:
+22:41 2023
+  10.10.10.24   de:c1:bf:7f:17:13                                                                                       4                   Thu Nov 23 07:
+25:32 2023
+  10.10.10.3    80:c1:6e:cd:c5:20                           HP J9773A 2530-24G-                                         4                   Thu Nov 23 07:
+22:01 2023
+  10.10.10.100  00:11:32:38:6b:bf       DiskStation                                                                     4                   Thu Nov 23 07:
+22:48 2023
+  10.10.10.40   c8:d7:78:85:5f:4e       bosch-dishwasher-01                                                             4                   Wed Nov 22 09:
+43:28 2023
+  10.10.10.10   f8:b4:6a:a6:5d:5b       Sherlock            MSFT 5.0                                                    4                   Fri Nov 24 14:
+03:22 2023
+  10.10.10.7    ac:80:0a:5c:ef:af                           android-dhcp-10                                             4                   Thu Nov 23 19:
+33:32 2023
+  10.10.10.14   ec:71:db:de:cb:96       Porch               udhcp 1.24.1                                                4                   Thu Nov 23 07:
+21:57 2023
+  10.10.10.2    10:7b:44:95:a9:08                           udhcp 1.17.4                                                4                   Thu Nov 23 07:
+22:10 2023
+  10.10.10.5    b8:d6:1a:a6:89:dc       Sensor-In-Network-C                                                             4                   Thu Nov 23 07:
+21:57 2023
+  10.10.10.13   ec:71:db:3c:0c:7c       RoomsCam            udhcp 1.24.1                                                4                   Thu Nov 23 07:
+21:57 2023
+  10.10.10.12   ec:71:db:b4:7c:fc       KitchenCam          udhcp 1.24.1                                                4                   Thu Nov 23 07:
+21:57 2023
+  10.10.10.11   ec:71:db:76:58:2a       HomeDoor            udhcp 1.24.1                                                4                   Thu Nov 23 07:
+21:57 2023
+
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus # diag wireless-controller wlac -c
+<value1>    Value of command.
+
+Olyumpus # diag wireless-controller wlac -c wtp
+-------------------------------WTP    1----------------------------
+WTP vd               : root, 0-FP221E5519095509    MP00
+    uuid             : 5adb4c56-832c-51ee-c896-27cbe16e7458
+    mgmt_vlanid      : 0
+    region code      :  valid
+    refcnt           : 2 own(1) wtpprof(1)   deleted(no)
+    apcfg status     : N/A,N/A cfg_ac=0.0.0.0:0 val_ac=0.0.0.0:0 cmds T 0 P 0 U 0 I 0 M 0
+    apcfg cmd details:
+    plain_ctl        : disabled
+    image-dl(wtp,rst): yes,no
+    admin            : enable
+    wtp-profile      : cfg(FAP221E-default) override(enabled) oper(resv-dflt-FP221E5519095509)
+    wtp-mode         : normal
+    wtp-wanlan-mode  : wan-only
+    cfg-apcfg-prof   :
+    oper-apcfg-pro   :
+    bonjour-profile  :
+    wtp-group        :
+    name             : FortiWifi
+    location         :
+    region-map       :
+    pos-x            : 0
+    pos-y            : 0
+    ble-major-id     : 0 (wtp: 0, grp: 0, prof: 0)
+    ble-minor-id     : 0 (wtp: 0, prof: 0)
+    led-blink        : disabled
+    led-state        : enabled
+    led-schedules    :
+    poe mode         : auto(auto)
+    poe-mode-oper    : auto
+    ext-info-enable  : enabled
+    ip-frag-prevent  : TCP_MSS
+    tun-mtu          : 0,0
+    split-tunneling-acl-path         : local
+    split-tunneling-local-ap-subnet  : disabled
+    active sw ver    :
+    local IPv4 addr  : 0.0.0.0
+    board mac        : 00:00:00:00:00:00
+    join_time        : N/A
+    mesh-uplink      : ethernet
+    mesh hop count   : 0
+    parent wtp id    :
+    connection state : Disconnected (0-0.0.0.0:0)
+    image download progress: 0
+    last failure     : 0 -- N/A
+    last failure param:
+    last failure time: N/A
+    station info     : 0/0
+    geo              : World (0)
+    deployment       : cfg platform-determined oper indoor
+  LLDP               : enabled (total 0)
+  SNMP               : disabled
+  WAN port authentication: none
+  WAN port 802.1x EAP method: all
+  Capability        :
+      local standalone             : enabled
+      lan port                     : enabled
+      local switch                 : enabled
+      vlan                         : enabled
+      local bridge                 : enabled
+      DFS                          : enabled
+      timestamp offset             : enabled
+      txpower percentage           : enabled
+      wpa3                         : enabled
+      station health               : enabled
+      DTLS v1.2                    : enabled
+      multiple time schedule       : enabled
+      energy-efficient-ethernet    : enabled
+      wan lan mode                 : disabled
+      led dark                     : enabled
+      kernel DTLS data             : enabled
+      128-length passwd            : enabled
+      internal wtp                 : disabled
+      IGMP Snoop                   : enabled
+      enhanced mpsk                : enabled
+      vap acl singe mac            : enabled
+      no rouge ap sta              : enabled
+      vap acl range/wildcard mac   : enabled
+  Radio 1            : AP
+    80211d enable:   : enabled
+    country name     : --
+    country code     : N/A
+    drma_manual_mode : ncf
+    radio_type       : 11N
+    channel list     : 1 6 11
+    darrp            : disabled
+    airtime fairness : disabled
+    MIMO mode        : default
+    txpower          : 100% (calc 20 oper 0 max 0 dBm)
+    beacon_intv      : 100
+    rts_threshold    : 2346
+    frag_threshold   : 2346
+    ap scan          : disable
+    ap scan passive  : disabled
+    sensor mode      : disabled
+    ARRP profile     : ---
+    WIDS profile     : ---
+    max vaps         : 8
+    base bssid       : 00:00:00:00:00:00
+    oper chan        : 0
+    noise_floor      : 0
+    chutil           : enabled
+    oper chutil time : N/A
+    oper chutil data : N/A
+    station info     : 0/0
+  Radio 2            : AP
+    80211d enable:   : enabled
+    country name     : --
+    country code     : N/A
+    drma_manual_mode : ncf
+    radio_type       : 11AC
+    channel list     : 36 40 44 48 52 56 60 64
+    darrp            : disabled
+    airtime fairness : disabled
+    MIMO mode        : default
+    txpower          : 100% (calc 20 oper 0 max 0 dBm)
+    beacon_intv      : 100
+    rts_threshold    : 2346
+    frag_threshold   : 2346
+    ap scan          : disable
+    ap scan passive  : disabled
+    sensor mode      : disabled
+    ARRP profile     : ---
+    WIDS profile     : ---
+    max vaps         : 8
+    base bssid       : 00:00:00:00:00:00
+    oper chan        : 0
+    noise_floor      : 0
+    chutil           : enabled
+    oper chutil time : N/A
+    oper chutil data : N/A
+    station info     : 0/0
+  Radio 3            : Not Exist
+  Radio 4            : Not Exist
+  Radio 5            : Not Exist
+  WAN/LAN stats      :
+         status      :
+  uplink status      :
+-------------------------------Total    1 WTPs----------------------------
+
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus # diag sniffer packet any 'oprt 5246 or 5247' 4
+interfaces=[any]
+filters=[oprt 5246 or 5247]
+pcap_compile: can't parse filter expression: syntax error
+
+Olyumpus # diag sniffer packet any 'port 5246 or 5247' 4
+interfaces=[any]
+filters=[port 5246 or 5247]
+11.522809 lan in 10.10.10.4.5246 -> 10.10.10.1.5246: udp 275
+11.523038 lan out 10.10.10.1.5246 -> 10.10.10.4.5246: udp 221
+21.522060 lan in 10.10.10.4.5246 -> 10.10.10.1.5246: udp 275
+21.522257 lan out 10.10.10.1.5246 -> 10.10.10.4.5246: udp 221
+59.030303 lan in 10.10.10.4.5246 -> 10.10.10.1.5246: udp 275
+59.030496 lan out 10.10.10.1.5246 -> 10.10.10.4.5246: udp 221
+94.047207 lan in 10.10.10.4.5246 -> 10.10.10.1.5246: udp 275
+94.047421 lan out 10.10.10.1.5246 -> 10.10.10.4.5246: udp 221
+129.067343 lan in 10.10.10.4.5246 -> 10.10.10.1.5246: udp 275
+129.067566 lan out 10.10.10.1.5246 -> 10.10.10.4.5246: udp 221
+160.562204 lan in 10.10.10.4.5246 -> 10.10.10.1.5246: udp 275
+160.562444 lan out 10.10.10.1.5246 -> 10.10.10.4.5246: udp 221
+
+Connection lost. Press Enter to start a new session.
+
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus # diag wireless-controller wlac -c wtp
+-------------------------------WTP    1----------------------------
+WTP vd               : root, 0-FP221E5519095509    MP00
+    uuid             : 5adb4c56-832c-51ee-c896-27cbe16e7458
+    mgmt_vlanid      : 0
+    region code      :  valid
+    refcnt           : 2 own(1) wtpprof(1)   deleted(no)
+    apcfg status     : N/A,N/A cfg_ac=0.0.0.0:0 val_ac=0.0.0.0:0 cmds T 0 P 0 U 0 I 0 M 0
+    apcfg cmd details:
+    plain_ctl        : disabled
+    image-dl(wtp,rst): yes,no
+    admin            : enable
+    wtp-profile      : cfg(FAP221E-default) override(enabled) oper(resv-dflt-FP221E5519095509)
+    wtp-mode         : normal
+    wtp-wanlan-mode  : wan-only
+    cfg-apcfg-prof   :
+    oper-apcfg-pro   :
+    bonjour-profile  :
+    wtp-group        :
+    name             : FortiWifi
+    location         :
+    region-map       :
+    pos-x            : 0
+    pos-y            : 0
+    ble-major-id     : 0 (wtp: 0, grp: 0, prof: 0)
+    ble-minor-id     : 0 (wtp: 0, prof: 0)
+    led-blink        : disabled
+    led-state        : enabled
+    led-schedules    :
+    poe mode         : auto(auto)
+    poe-mode-oper    : auto
+    ext-info-enable  : enabled
+    ip-frag-prevent  : TCP_MSS
+    tun-mtu          : 0,0
+    split-tunneling-acl-path         : local
+    split-tunneling-local-ap-subnet  : disabled
+    active sw ver    :
+    local IPv4 addr  : 0.0.0.0
+    board mac        : 00:00:00:00:00:00
+    join_time        : N/A
+    mesh-uplink      : ethernet
+    mesh hop count   : 0
+    parent wtp id    :
+    connection state : Disconnected (0-0.0.0.0:0)
+    image download progress: 0
+    last failure     : 0 -- N/A
+    last failure param:
+    last failure time: N/A
+    station info     : 0/0
+    geo              : World (0)
+    deployment       : cfg platform-determined oper indoor
+  LLDP               : enabled (total 0)
+  SNMP               : disabled
+  WAN port authentication: none
+  WAN port 802.1x EAP method: all
+  Capability        :
+      local standalone             : enabled
+      lan port                     : enabled
+      local switch                 : enabled
+      vlan                         : enabled
+      local bridge                 : enabled
+      DFS                          : enabled
+      timestamp offset             : enabled
+      txpower percentage           : enabled
+      wpa3                         : enabled
+      station health               : enabled
+      DTLS v1.2                    : enabled
+      multiple time schedule       : enabled
+      energy-efficient-ethernet    : enabled
+      wan lan mode                 : disabled
+      led dark                     : enabled
+      kernel DTLS data             : enabled
+      128-length passwd            : enabled
+      internal wtp                 : disabled
+      IGMP Snoop                   : enabled
+      enhanced mpsk                : enabled
+      vap acl singe mac            : enabled
+      no rouge ap sta              : enabled
+      vap acl range/wildcard mac   : enabled
+  Radio 1            : AP
+    80211d enable:   : enabled
+    country name     : --
+    country code     : N/A
+    drma_manual_mode : ncf
+    radio_type       : 11N
+    channel list     : 1 6 11
+    darrp            : disabled
+    airtime fairness : disabled
+    MIMO mode        : default
+    txpower          : 100% (calc 20 oper 0 max 0 dBm)
+    beacon_intv      : 100
+    rts_threshold    : 2346
+    frag_threshold   : 2346
+    ap scan          : disable
+    ap scan passive  : disabled
+    sensor mode      : disabled
+    ARRP profile     : ---
+    WIDS profile     : ---
+    max vaps         : 8
+    base bssid       : 00:00:00:00:00:00
+    oper chan        : 0
+    noise_floor      : 0
+    chutil           : enabled
+    oper chutil time : N/A
+    oper chutil data : N/A
+    station info     : 0/0
+  Radio 2            : AP
+    80211d enable:   : enabled
+    country name     : --
+    country code     : N/A
+    drma_manual_mode : ncf
+    radio_type       : 11AC
+    channel list     : 36 40 44 48 52 56 60 64
+    darrp            : disabled
+    airtime fairness : disabled
+Olyumpus #
+Olyumpus # config system global
+
+Olyumpus (global) # get | grep wireless
+gui-wireless-opensecurity: disable
+wireless-controller : enable
+wireless-controller-port: 5246
+
+Olyumpus (global) # end
+
+Olyumpus # diag wireless-controller wlac -c stp
+wlac usage:
+    wlac help                       --show this usage
+    wlac ping [-c cnt] [-s len] <ip> --send cnt len-bytes ping request
+    wlac tpt                        --show non-wireless terminaton point info
+    wlac tablesize                  --print tablesize for wireless-controller part only
+    wlac spectral-scan wtp-id radio-id <enable|disable|scan-only>  --enable/disable spectral scan.
+    wlac kickmac mac                --disassociate a sta
+    wlac kickwtp ip cport           --tear down a wtp session
+    wlac wtpcmd ip cport run|clr|show|showhex|r&s|r&sh [cmd [size]] --run the command on the remote AP
+    wlac plain-ctl [[wtp-id] [0|1] | clear]   --show, set or clear current plain control setting
+    wlac sniff-cfg [[ip port] | clear]   --show, set or clear sniff server ip and port
+    wlac sniff [intf [wtp-id] [0|1|2] | clear]     --show, set or clear sniff setting on intf for wtp-id
+    wlac list-vap                   --show configured VAPs and VAP groups.
+    wlac scanclr                    --clear the scanned rogue ap list
+    wlac scanstaclr                 --clear the scanned rogue sta list
+    wlac ipsecadd                   --auto generated ipsec user name and group for data tunnel
+    wlac ipsecclr                   --clear the auto generated ipsec related config for data tunnel
+    wlac sta_filter [sta-mac level | clear]    --show, set or clear sta filter
+    wlac wtp_filter [id vfid-ip:port level | clear]  --show, set or clear wtp filter
+    wlac clear debug                --clear all debug settings
+    wlac show debug                 --show all debug settings
+    wlac show kernel                --show all -k command settings
+    wlac show data                  --show all -d settings
+    wlac show control               --show all -c settings
+    wlac show all                   --show all -k,-c,-d and debug settings
+    wlac evhdl                      --show the event handlers
+    wlac evhdl-stats [clear] [ws] [ssid]     --show the event handler tx/rx stats
+    wlac list-mac-db                --show all mac-address vendor list
+    wlac get-mac-vendor [mac]          --get mac-address vendor name
+    wlac -k cws [wlan]                   --list cws info(kern)
+    wlac -k wtp [vfid-ip:port lip:port]  --list wtp info(kern)
+    wlac -k vap [wlan | bssid]           --list vap info(kern)
+    wlac -k vap-mcgrp [bssid]            --list vap mc group info(kern)
+    wlac -k sta [wlan | bssid mac]       --list sta info(kern)
+    wlac -k wlan-sta wlan sta-ip         --list wlan's sta info(kern)
+    wlac -d usage                   --list objects usage(data)
+    wlac sta-idle-auth [time]       --get/set non-auth sta idle time
+    wlac wpad-mpsk-cache [mac]      --list MPSK cache in wpad_ac
+    wlac wpad-del-mpsk-cache [mac] [ssid] [prof] [group] [key]  --delete MPSK cache in wpad_ac
+    wlac -d all                     --list wlan/wtp/vap/sta info(data)
+    wlac -d wlan                    --list wlan info(data)
+    wlac -d wtp [SN|name] [reset]   --list or reset wtp info(data)
+    wlac -d vap [bssid] [reset]     --list or reset vap info(data)
+    wlac -d sta [mac] [reset]       --list or reset sta info(data)
+    wlac -d sta-idx [wlan mac next] --list indexed sta info(data)
+    wlac -d wlsta wlan              --list wlan's sta info(data)
+    wlac -d wlvl wlan [clear [ip]]  --list wlan's vlan info(data)
+    wlac -d wlsta-peer wlan         --list wlan's layer 3 roaming peer controller sta info(data)
+    wlac -d wtpsta wtp-index        --list wtp's sta info(data)
+    wlac -d radiosta wtp-id rId     --list radio's sta info(data)
+    wlac -c stats                   --display ac mem stats
+    wlac -c stats-ev                --display/clear ac event stats
+    wlac -c mpmt                    --display ac mpmt summary
+    wlac -c snmp                    --display snmp info
+    wlac -c ciphers                 --display supported cipher list
+    wlac -c sta [mac]               --list sta(ctl)
+    wlac -c wtpprof [wtpprof]         --list configured wtp profiles(ctl)
+    wlac -c wtp [wtp]               --list configured wtps(ctl)
+    wlac -c wtp-idx [wtp next]        --list indexed wtp (ctl)
+    wlac -c radio-idx [wtp rId next]  --list indexed radio (ctl)
+    wlac -c vap-idx [wtp rId wlan next] --list indexed vap (ctl)
+    wlac -c wlan [wlan|ssid]        --list configured wlans(ctl)
+    wlac -c swintf                  --list configured switch interface(ctl)
+    wlac -c apsintf                 --list configured aps interface(ctl)
+    wlac -c ap-status               --list configured ap status(ctl)
+    wlac -c address                 --list configured addresses(ctl)
+    wlac -c addrgrp                 --list configured address groups(ctl)
+    wlac -c nacprof                 --list configured nac profiles(ctl)
+    wlac -c apcfgprof               --list configured apcfg profiles(ctl)
+    wlac -c arrpprof                --list configured arrp profiles(ctl)
+    wlac -c widsprof                --list configured wids profiles(ctl)
+    wlac -c bjprof                  --list configured bonjour profiles(ctl)
+    wlac -c qosprof                 --list configured qos profiles(ctl)
+    wlac -c bleprof                 --list configured ble profiles(ctl)
+    wlac -c syslogprof              --list configured syslog profiles(ctl)
+    wlac -c hsprof                  --list configured hotspot 2.0 profiles(ctl)
+    wlac -c afwprof                 --list configured ap firewall profiles(ctl)
+    wlac -c wagprof                 --list configured wag profiles(ctl)
+    wlac -c mpsk-prof               --list configured MPSK profiles(ctl)
+    wlac -c ws [ip[:port]]          --list current wtp sessions(ctl)
+    wlac -c ws-fail                 --show current wtp sessions with SSID config failures
+    wlac -c ws-ext [ip]             --list current wtp sessions extension info(ctl)
+    wlac -c ws-mesh vfid-ip:port    --list this wtp session's mesh parent and child info(ctl)
+    wlac -c ws-esl [ip]             --list wtp's ESL ses-imagotag status(ctl)
+    wlac -c rpt-idx                 --list wtp report index table(ctl)
+    wlac -c vlan-probe-cmd          --vlan probe on wtp's wan interface
+    wlac -c vlan-probe-rpt          --show vlan probed vlans info
+    wlac -c vap                     --list vap info(ctl)
+    wlac -c vap-mcgrp [wtp rId wId] --list vap multicast group info(ctl)
+    wlac -c ap-rogue                --list rogue ap info(ctl)
+    wlac -c ap-rogue-ts             --list rogue ap info by timestamp(ctl)
+    wlac -c ap-rogue-phishing       --list phishing rogue ap info(ctl)
+    wlac -c sta-rogue               --list rogue sta info(ctl)
+    wlac -c rap-hostlist bssid      --list hosts related to the ap(ctl)
+    wlac -c arp-req                 --list arp info on the controller(ctl)
+    wlac -c mac-table               --list mac table(ctl)
+    wlac -c br-table                --list bridge table(ctl)
+    wlac -c nol                     --list the AP's non occupancy channel list for radar
+    wlac -c cmcc-radius-test <server> ...     --test cmcc auth radius server
+    wlac -c cmcc-auth-test <client-ip> <0|1>  --simulate cmcc-auth result
+    wlac -c scan-clr-all            --clear the scanned rogue ap and sta data(ctl)
+    wlac -c ap-onwire-clr bssid     --clear the rogue ap's on wire flag(ctl)
+    wlac -c darrp                   --list darrp radio table(ctl)
+    wlac -c darrp-schedule          --list darrp schedule table
+    wlac -c sta-cap [mac]           --list sta capability(ctl)
+    wlac -c sta-locate              --list located wireless stations(ctl)
+    wlac -c sta-locate-reset [1|2]  --reset sta-locate data(ctl); 1: reset stats, 2 (default): flush entries
+    wlac -c cfg-qtn                 --list configured user quarantine list
+    wlac -c sta-qtn                 --list sta in user quarantine list
+    wlac -c rf-analysis [wtp-id|ac] --list rf analysis results(ctl)
+    wlac -c rf-sa wtp-id rId [chan] --list rf spectrum info
+    wlac -c radio-ifr wtp-id rId    --list radio's interfering APs
+    wlac -c wids                    --show detected sta threat in control plane
+    wlac -c ha                      --show WC fast failover info
+    wlac -c ipsec-data              --show ipsec data info
+    wlac -c vdom                    --show vdom info
+    wlac -c ble-dev                 --list ble device info(ctl)
+    wlac -c utm-push [wtpprof]      --push utm configuration to ap
+    wlac -c wtp-drma-eval           --evaluate and assign dynamic radio mode
+    wlac -c wtp-drma-radio          --show drma radio status
+    wlac -c wtp-drma-mode wtp rId ap|monitor|ncf --assign wtp radio operating drma mode
+    wlac -c ws-drma-mode vfid-ip:port rId ap|monitor|ncf --assign ws radio operating drma mode
+
+    wlac help darrp     -- automatic radio resource provisioning
+    wlac help l3r       -- layer 3 roaming
+    wlac help mpmt      -- multi-process
+
+Olyumpus # diag wireless-controller wlac -c wtp
+-------------------------------WTP    1----------------------------
+WTP vd               : root, 0-FP221E5519095509    MP00
+    uuid             : 5adb4c56-832c-51ee-c896-27cbe16e7458
+    mgmt_vlanid      : 0
+    region code      :  valid
+    refcnt           : 2 own(1) wtpprof(1)   deleted(no)
+    apcfg status     : N/A,N/A cfg_ac=0.0.0.0:0 val_ac=0.0.0.0:0 cmds T 0 P 0 U 0 I 0 M 0
+    apcfg cmd details:
+    plain_ctl        : disabled
+    image-dl(wtp,rst): yes,no
+    admin            : enable
+    wtp-profile      : cfg(FAP221E-default) override(enabled) oper(resv-dflt-FP221E5519095509)
+    wtp-mode         : normal
+    wtp-wanlan-mode  : wan-only
+    cfg-apcfg-prof   :
+    oper-apcfg-pro   :
+    bonjour-profile  :
+    wtp-group        :
+    name             : FortiWifi
+    location         :
+    region-map       :
+    pos-x            : 0
+    pos-y            : 0
+    ble-major-id     : 0 (wtp: 0, grp: 0, prof: 0)
+    ble-minor-id     : 0 (wtp: 0, prof: 0)
+    led-blink        : disabled
+    led-state        : enabled
+    led-schedules    :
+    poe mode         : auto(auto)
+    poe-mode-oper    : auto
+    ext-info-enable  : enabled
+    ip-frag-prevent  : TCP_MSS
+    tun-mtu          : 0,0
+    split-tunneling-acl-path         : local
+    split-tunneling-local-ap-subnet  : disabled
+    active sw ver    :
+    local IPv4 addr  : 0.0.0.0
+    board mac        : 00:00:00:00:00:00
+    join_time        : N/A
+    mesh-uplink      : ethernet
+    mesh hop count   : 0
+    parent wtp id    :
+    connection state : Disconnected (0-0.0.0.0:0)
+    image download progress: 0
+    last failure     : 0 -- N/A
+    last failure param:
+    last failure time: N/A
+    station info     : 0/0
+    geo              : World (0)
+    deployment       : cfg platform-determined oper indoor
+  LLDP               : enabled (total 0)
+  SNMP               : disabled
+  WAN port authentication: none
+  WAN port 802.1x EAP method: all
+  Capability        :
+      local standalone             : enabled
+      lan port                     : enabled
+      local switch                 : enabled
+      vlan                         : enabled
+      local bridge                 : enabled
+      DFS                          : enabled
+      timestamp offset             : enabled
+      txpower percentage           : enabled
+      wpa3                         : enabled
+      station health               : enabled
+      DTLS v1.2                    : enabled
+      multiple time schedule       : enabled
+      energy-efficient-ethernet    : enabled
+      wan lan mode                 : disabled
+      led dark                     : enabled
+      kernel DTLS data             : enabled
+      128-length passwd            : enabled
+      internal wtp                 : disabled
+      IGMP Snoop                   : enabled
+      enhanced mpsk                : enabled
+      vap acl singe mac            : enabled
+      no rouge ap sta              : enabled
+      vap acl range/wildcard mac   : enabled
+  Radio 1            : AP
+    80211d enable:   : enabled
+    country name     : --
+    country code     : N/A
+    drma_manual_mode : ncf
+    radio_type       : 11N
+    channel list     : 1 6 11
+    darrp            : disabled
+    airtime fairness : disabled
+    MIMO mode        : default
+    txpower          : 100% (calc 20 oper 0 max 0 dBm)
+    beacon_intv      : 100
+    rts_threshold    : 2346
+    frag_threshold   : 2346
+    ap scan          : disable
+    ap scan passive  : disabled
+    sensor mode      : disabled
+    ARRP profile     : ---
+    WIDS profile     : ---
+    max vaps         : 8
+    base bssid       : 00:00:00:00:00:00
+    oper chan        : 0
+    noise_floor      : 0
+    chutil           : enabled
+    oper chutil time : N/A
+    oper chutil data : N/A
+    station info     : 0/0
+  Radio 2            : AP
+    80211d enable:   : enabled
+    country name     : --
+    country code     : N/A
+    drma_manual_mode : ncf
+    radio_type       : 11AC
+    channel list     : 36 40 44 48 52 56 60 64
+    darrp            : disabled
+    airtime fairness : disabled
+    MIMO mode        : default
+    txpower          : 100% (calc 20 oper 0 max 0 dBm)
+    beacon_intv      : 100
+    rts_threshold    : 2346
+    frag_threshold   : 2346
+    ap scan          : disable
+    ap scan passive  : disabled
+    sensor mode      : disabled
+    ARRP profile     : ---
+    WIDS profile     : ---
+    max vaps         : 8
+    base bssid       : 00:00:00:00:00:00
+    oper chan        : 0
+    noise_floor      : 0
+    chutil           : enabled
+    oper chutil time : N/A
+    oper chutil data : N/A
+    station info     : 0/0
+  Radio 3            : Not Exist
+  Radio 4            : Not Exist
+  Radio 5            : Not Exist
+  WAN/LAN stats      :
+         status      :
+  uplink status      :
+-------------------------------Total    1 WTPs----------------------------
+
+Olyumpus # Timeout
+
+Connection lost. Press Enter to start a new session.
+
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus # diag wireless-controller wlac -c wtp
+-------------------------------WTP    1----------------------------
+WTP vd               : root, 0-FP221E5519095509    MP00
+    uuid             : 5adb4c56-832c-51ee-c896-27cbe16e7458
+    mgmt_vlanid      : 0
+    region code      :  valid
+    refcnt           : 2 own(1) wtpprof(1)   deleted(no)
+    apcfg status     : N/A,N/A cfg_ac=0.0.0.0:0 val_ac=0.0.0.0:0 cmds T 0 P 0 U 0 I 0 M 0
+    apcfg cmd details:
+    plain_ctl        : disabled
+    image-dl(wtp,rst): yes,no
+    admin            : enable
+    wtp-profile      : cfg(FAP221E-default) override(enabled) oper(resv-dflt-FP221E5519095509)
+    wtp-mode         : normal
+    wtp-wanlan-mode  : wan-only
+    cfg-apcfg-prof   :
+    oper-apcfg-pro   :
+    bonjour-profile  :
+    wtp-group        :
+    name             : FortiWifi
+    location         :
+    region-map       :
+    pos-x            : 0
+    pos-y            : 0
+    ble-major-id     : 0 (wtp: 0, grp: 0, prof: 0)
+    ble-minor-id     : 0 (wtp: 0, prof: 0)
+    led-blink        : disabled
+    led-state        : enabled
+    led-schedules    :
+    poe mode         : auto(auto)
+    poe-mode-oper    : auto
+    ext-info-enable  : enabled
+    ip-frag-prevent  : TCP_MSS
+    tun-mtu          : 0,0
+    split-tunneling-acl-path         : local
+    split-tunneling-local-ap-subnet  : disabled
+    active sw ver    :
+    local IPv4 addr  : 0.0.0.0
+    board mac        : 00:00:00:00:00:00
+    join_time        : N/A
+    mesh-uplink      : ethernet
+    mesh hop count   : 0
+    parent wtp id    :
+    connection state : Disconnected (0-0.0.0.0:0)
+    image download progress: 0
+    last failure     : 0 -- N/A
+    last failure param:
+    last failure time: N/A
+    station info     : 0/0
+    geo              : World (0)
+    deployment       : cfg platform-determined oper indoor
+  LLDP               : enabled (total 0)
+  SNMP               : disabled
+  WAN port authentication: none
+  WAN port 802.1x EAP method: all
+  Capability        :
+      local standalone             : enabled
+      lan port                     : enabled
+      local switch                 : enabled
+      vlan                         : enabled
+      local bridge                 : enabled
+      DFS                          : enabled
+      timestamp offset             : enabled
+      txpower percentage           : enabled
+      wpa3                         : enabled
+      station health               : enabled
+      DTLS v1.2                    : enabled
+      multiple time schedule       : enabled
+      energy-efficient-ethernet    : enabled
+      wan lan mode                 : disabled
+      led dark                     : enabled
+      kernel DTLS data             : enabled
+      128-length passwd            : enabled
+      internal wtp                 : disabled
+      IGMP Snoop                   : enabled
+      enhanced mpsk                : enabled
+      vap acl singe mac            : enabled
+      no rouge ap sta              : enabled
+      vap acl range/wildcard mac   : enabled
+  Radio 1            : AP
+    80211d enable:   : enabled
+    country name     : --
+    country code     : N/A
+    drma_manual_mode : ncf
+    radio_type       : 11N
+    channel list     : 1 6 11
+    darrp            : disabled
+    airtime fairness : disabled
+    MIMO mode        : default
+    txpower          : 100% (calc 20 oper 0 max 0 dBm)
+    beacon_intv      : 100
+    rts_threshold    : 2346
+    frag_threshold   : 2346
+    ap scan          : disable
+    ap scan passive  : disabled
+    sensor mode      : disabled
+    ARRP profile     : ---
+    WIDS profile     : ---
+    max vaps         : 8
+    base bssid       : 00:00:00:00:00:00
+    oper chan        : 0
+    noise_floor      : 0
+    chutil           : enabled
+    oper chutil time : N/A
+    oper chutil data : N/A
+    station info     : 0/0
+  Radio 2            : AP
+    80211d enable:   : enabled
+    country name     : --
+    country code     : N/A
+    drma_manual_mode : ncf
+    radio_type       : 11AC
+    channel list     : 36 40 44 48 52 56 60 64
+    darrp            : disabled
+    airtime fairness : disabled
+    MIMO mode        : default
+    txpower          : 100% (calc 20 oper 0 max 0 dBm)
+    beacon_intv      : 100
+    rts_threshold    : 2346
+    frag_threshold   : 2346
+    ap scan          : disable
+    ap scan passive  : disabled
+    sensor mode      : disabled
+    ARRP profile     : ---
+    WIDS profile     : ---
+    max vaps         : 8
+    base bssid       : 00:00:00:00:00:00
+    oper chan        : 0
+    noise_floor      : 0
+    chutil           : enabled
+    oper chutil time : N/A
+    oper chutil data : N/A
+    station info     : 0/0
+  Radio 3            : Not Exist
+  Radio 4            : Not Exist
+  Radio 5            : Not Exist
+  WAN/LAN stats      :
+         status      :
+  uplink status      :
+-------------------------------Total    1 WTPs----------------------------
+
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus # diag sniffer packet any 'port '
+interfaces=[any]
+filters=[port ]
+
+pcap_compile: can't parse filter expression: syntax error
+
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus # diag sniffer packet any 'host 10.10.10.4' 6 0 aTimeout
+
+Connection lost. Press Enter to start a new session.
+
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus # diag debug reset
+
+
+
+
+Olyumpus #
+Olyumpus #
+Olyumpus #
+Olyumpus #

@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TestParser/1.0.0": {
+        "dependencies": {
+          "FileParser": "3.0.0"
+        },
+        "runtime": {
+          "TestParser.dll": {}
+        }
+      },
+      "FileParser/3.0.0": {
+        "runtime": {
+          "lib/net6.0/FileParser.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TestParser/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FileParser/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I7AybPkOYSStNMuzqsTjP+cKWwkyY/uCLG6ULTiOzzWaaY4Kof26/EilGJUiBI75OgI96qR9JZDJQF0vpY7OCg==",
+      "path": "fileparser/3.0.0",
+      "hashPath": "fileparser.3.0.0.nupkg.sha512"
+    }
+  }
+}
